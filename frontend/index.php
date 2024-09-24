@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -14,9 +14,9 @@
                 <label for="email">Email</label><br>
                 <input type="text" name="email">  
             </div>
-            <div>
-                <label for="email">Senha</label><br>
-                <input type="text" name="senha">  
+            <div class="senha">
+                <label for="senha">Senha</label><br>
+                <input type="password" name="senha">  
             </div>
             <div class="botao">
                 <a href="index.html">ENTRAR</a>
