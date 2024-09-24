@@ -8,15 +8,15 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    $select = "SELECT * from usuario WHERE email='$email' and senha='$senha'";
+    $select = "SELECT * from Usuario WHERE email='$email' and senha='$senha'";
 
     $resul = mysqli_query($conexao, $select);
     $linha = mysqli_fetch_assoc($resul);
 
     if(mysqli_num_rows($resul) < 1){
-        unset($_SESSION["email"]);
+        unset($_SESSION["email"]);  
         unset($_SESSION["senha"]);
-        header("location: ../index.html");
+        header("location: ../frontend/index.php");
     } else {
         $_SESSION["senha"] = $senha;
         $_SESSION["email"] = $email;
@@ -29,7 +29,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
         $_SESSION["cidade"] = $linha["cidade"];
         $_SESSION["linkedin"] = $linha["linkedin"];
         $_SESSION["dNasc"] = $linha["dNasc"];
-        header("location: ../paginaprincipal.php");
+        header("location: ../frontend/home.php");
     }
    
 }

@@ -8,19 +8,19 @@
 </head>
 
 <body>
-    <div class="container"> 
+    <div class="container">
             <div><img src="img/img-login.png" alt="imagem de mulher login"></div>
-            <div>
+            <form action="../backend/login.php" method="post">
+
                 <label for="email">Email</label><br>
-                <input type="text" name="email">  
-            </div>
-            <div class="senha">
+                <input type="text" name="email"> 
+
                 <label for="senha">Senha</label><br>
                 <input type="password" name="senha">  
-            </div>
-            <div class="botao">
-                <a href="index.html">ENTRAR</a>
-            </div>
+
+                <button class="botao" name="login" type="submit" value="login">ENTRAR</button>
+
+            </form>
         <p>Não possui conta? <a href="escolher.html" id="text-cadastro">Cadastre-se aqui!</a></p>
     </div>
 </body>

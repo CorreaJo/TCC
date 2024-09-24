@@ -14,7 +14,7 @@ $dNasc = $_POST["dNasc"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$sql= "UPDATE usuario SET nome = '$nome', senha = '$senha', telefone = '$telefone', rua = '$rua', crp = '$cep', numCasa = '$numCasa', cidade = '$cidade', linkedin = '$linkedin', dNasc = '$dNasc', email = '$email, WHERE cpf = '$cpf'";
+$sql= "UPDATE usuario SET nome = '$nome', senha = '$senha', telefone = '$telefone', rua = '$rua', cep = '$cep', numCasa = '$numCasa', cidade = '$cidade', linkedin = '$linkedin', dNasc = '$dNasc', email = '$email, WHERE cpf = '$cpf'";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {
