@@ -1,3 +1,9 @@
+<?php
+require "../backend/conexao.php";
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,15 +26,10 @@
                     <li><a href="#">Cursos</a></li>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
                     <li><a href="#">Portal das empresas</a></li>
-                    <li><a href="#">Portal do candidato</a></li>  
+                    <li><a href="usuario.php">Portal do candidato</a></li>  
                 </ol>
             </nav>
     </header>
-
-
-
-
-
     <script>
         function clickMenu () {
             if (menu.style.display == 'block') {
