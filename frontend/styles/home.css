@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: black;
+}
+
+.menu-close {
+    background-color: #642898;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px
+}
+
+.menu-close img {
+    width: 100px;
+}
+
+#botao-menu {
+    display: block;
+    background-color: #642898;  
+    width: 30px;
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    margin-right: 10px;
+}
+
+.nav-list {
+    display: none;
+    background-color: white;
+}
+
+.nav-list ol{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.nav-list a {
+    color: black;
+    font-family: "Poppins", system-ui;
+    font-size: 18px;
+}
+
+#row {
+    background-color: #462856;
+    height: 3px;
+}
