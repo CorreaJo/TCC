@@ -16,8 +16,13 @@ body {
     align-items: center;
 }
 
+.senha {
+    margin-top: 10px;
+}
+
 label {
     color: white;
+    margin-bottom: 10px;
 }
 
 input {
@@ -45,6 +50,10 @@ p {
     border-radius: 10px;
 }
 
+.botao:hover {
+    background-color: #33164b;
+}
+
 .botao > a {
     color: white;
     text-decoration: none ;
@@ -58,24 +67,4 @@ p {
 
 textarea:focus, input:focus, select:focus {
     outline: 0;
-}
-
-/* PAGINA DE ESCOLHA -------------------------------------- */
-
-.escolher-usuario {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.escolher-usuario > h1 {
-    color: white;
-    text-align: center;
-    font-size: 20px;
-}
-
-.escolher-usuario > a {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
 }
