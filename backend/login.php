@@ -8,16 +8,40 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    $select = "SELECT * from Usuario WHERE email='$email' and senha='$senha'";
+
+    $select = "SELECT * from usuario WHERE email='$email' and senha='$senha'";
 
     $resul = mysqli_query($conexao, $select);
-    $linha = mysqli_fetch_assoc($resul);
+    
 
     if(mysqli_num_rows($resul) < 1){
-        unset($_SESSION["email"]);  
-        unset($_SESSION["senha"]);
-        header("location: ../frontend/index.php");
+
+        $select = "SELECT * from empresa WHERE email='$email' and senha='$senha'";
+        $resulEmpresa = mysqli_query($conexao, $select);
+
+        if(mysqli_num_rows($resulEmpresa) < 1){
+            unset($_SESSION["email"]);
+            unset($_SESSION["senha"]);
+            header("location: ../index.html");
+        } else {
+
+            $linha = mysqli_fetch_assoc($resulEmpresa);
+
+            $_SESSION["senha"] = $senha;
+            $_SESSION["email"] = $email;
+            $_SESSION["nome"] = $linha["nome"];
+            $_SESSION["cnpj"] = $linha["cnpj"];
+            $_SESSION["telefone"] = $linha["telefone"];
+            $_SESSION["cidade"] = $linha["cidade"];
+            $_SESSION["linkedin"] = $linha["linkedin"];
+
+            header("location: ../paginaprincipal.php");
+        }
+            
     } else {
+
+        $linha = mysqli_fetch_assoc($resul);
+
         $_SESSION["senha"] = $senha;
         $_SESSION["email"] = $email;
         $_SESSION["nome"] = $linha["nome"];
@@ -29,9 +53,8 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
         $_SESSION["cidade"] = $linha["cidade"];
         $_SESSION["linkedin"] = $linha["linkedin"];
         $_SESSION["dNasc"] = $linha["dNasc"];
+        
         header("location: ../frontend/home.php");
     }
    
 }
-
-?>
