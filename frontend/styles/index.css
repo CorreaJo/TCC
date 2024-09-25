@@ -46,18 +46,19 @@ p {
 .botao {
     margin-top: 20px;
     background-color: #642898;
-    padding: 5px 80px;
+    padding: 5px 50px;
     border-radius: 10px;
+    border: none;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
 }
 
 .botao:hover {
     background-color: #33164b;
-}
-
-.botao > a {
-    color: white;
-    text-decoration: none ;
-    font-size: 20px;
 }
 
 #text-cadastro {

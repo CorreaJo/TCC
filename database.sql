@@ -14,6 +14,5 @@ CREATE TABLE Usuario (
     numCasa VARCHAR (5) NOT NULL,
     cidade VARCHAR (50) NOT NULL,
     linkedin VARCHAR (100) NULL,
-    dNasc VARCHAR(8) NOT NULL
-
+    dNasc VARCHAR(12) NOT NULL
 );

@@ -21,12 +21,16 @@ session_start();
         </div>
             <nav id="menu" class="nav-list">
                 <ol id="menu-open">
-                    <li><a href="index.php">Login</a></li>
+                <?php
+                    if(empty($_SESSION["email"]) ) {
+                        ?><li><a class="link" href="index.php">Login</a></li><?php
+                    } else {
+                        ?><li><a class="link" href="usuario.php">Portal do Candidato</a></li><?php
+                    }?>
                     <li><a href="#">Vagas</a></li>
                     <li><a href="#">Cursos</a></li>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
                     <li><a href="#">Portal das empresas</a></li>
-                    <li><a href="usuario.php">Portal do candidato</a></li>  
                 </ol>
             </nav>
     </header>

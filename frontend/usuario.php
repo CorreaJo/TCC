@@ -13,7 +13,7 @@ require "../backend/conexao.php";
 <body>
 
 <h1><?= $_SESSION["nome"]?></h1>
-
+<a href="../backend/sair.php">Sair</a>
 
 </body>
 </html>

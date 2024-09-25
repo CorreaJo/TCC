@@ -10,17 +10,17 @@
 <body>
     <div class="container">
             <div><img src="img/img-login.png" alt="imagem de mulher login"></div>
-            <form action="../backend/login.php" method="post">
+            <div>
+                <form action="../backend/login.php" method="post">
+                    <label for="email">Email</label><br>
+                    <input type="text" name="email"> 
 
-                <label for="email">Email</label><br>
-                <input type="text" name="email"> 
+                    <label for="senha">Senha</label><br>
+                    <input type="password" name="senha">  
 
-                <label for="senha">Senha</label><br>
-                <input type="password" name="senha">  
-
-                <button class="botao" name="login" type="submit" value="login">ENTRAR</button>
-
-            </form>
+                    <button class="botao" name="login" type="submit" value="login">ENTRAR</button>
+                </form>
+            </div>
         <p>Não possui conta? <a href="escolher.html" id="text-cadastro">Cadastre-se aqui!</a></p>
     </div>
 </body>

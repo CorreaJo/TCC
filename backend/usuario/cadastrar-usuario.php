@@ -4,42 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Cadastrar Usuario</title>
+    <link rel="stylesheet" href="../../frontend/styles/cadastro-usuario.css">
 </head>
 <body>
-    <form action="cadastro.php" method="post">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome">
-
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf">
-
-        <label for="tel">Telefone</label>
-        <input type="text" name="tel">
-        
-        <label for="rua">Rua</label>
-        <input type="text" name="rua">
-
-        <label for="cep">CEP</label>
-        <input type="text" name="cep">
-
-        <label for="numCasa">Numero</label>
-        <input type="text" name="numCasa">
-
-        <label for="cidade">Cidade</label>
-        <input type="text" name="cidade">
-
-        <label for="linkedin">Linkedin</label>
-        <input type="text" name="linkedin">
-
-        <label for="dNasc">Data de Nascimento</label>
-        <input type="text" name="dNasc">
-
-        <label for="email">Email</label>
-        <input type="text" name="email">
-
-        <label for="senha">Senha</label>
-        <input type="text" name="senha">
-        <button>CADASTRAR</button>
-    </form>
+    <div class="container">
+        <h1>Complete os dados a seguir.</h1>
+        <form action="cadastro.php" method="post">
+            <label for="nome">Nome completo:</label><br>
+            <input type="text" name="nome">
+            <br>
+            <label for="cpf">CPF:</label><br>
+            <input type="text" name="cpf">
+            <br>
+            <label for="tel">Telefone ou Celular:</label><br>
+            <input type="text" name="tel">
+            <br>
+            <label for="cep">CEP:</label><br>
+            <input type="text" name="cep">
+            <br>
+            <label for="rua">Rua:</label><br>
+            <input type="text" name="rua">
+            <br>
+            <label for="numCasa">Número residencial:</label><br>
+            <input type="text" name="numCasa">
+            <br>
+            <label for="cidade">Cidade:</label><br>
+            <input type="text" name="cidade">
+            <br>
+            <label for="linkedin">Linkedin:</label><br>
+            <input type="text" name="linkedin">
+            <br>
+            <label for="dNasc">Data de Nascimento:</label><br>
+            <input type="date" name="dNasc">
+            <br>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email">
+            <br>
+            <label for="senha">Senha:</label><br>
+            <input type="password" name="senha">
+            <br>
+            <button class="botao">CADASTRAR</button>
+        </form>
+        <a href="../../frontend/index.php">Voltar para o login</a>
+    </div>
 </body>
 </html>
