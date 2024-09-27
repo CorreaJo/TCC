@@ -22,7 +22,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
         if(mysqli_num_rows($resulEmpresa) < 1){
             unset($_SESSION["email"]);
             unset($_SESSION["senha"]);
-            header("location: ../index.html");
+            header("location: ../frontend/index.php");
         } else {
 
             $linha = mysqli_fetch_assoc($resulEmpresa);
@@ -35,7 +35,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
             $_SESSION["cidade"] = $linha["cidade"];
             $_SESSION["linkedin"] = $linha["linkedin"];
 
-            header("location: ../paginaprincipal.php");
+            header("location: ../home.php");
         }
             
     } else {

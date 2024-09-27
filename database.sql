@@ -25,5 +25,5 @@ CREATE TABLE Empresa (
     cnpj VARCHAR(14) NOT NULL,
     telefone VARCHAR(25) NOT NULL,
     cidade VARCHAR (50) NOT NULL,
-    linkedin VARCHAR (100) NULL,
+    linkedin VARCHAR (100) NULL
 );
