@@ -27,10 +27,10 @@ session_start();
                     } else {
                         ?><li><a class="link" href="usuario.php">Portal do Candidato</a></li><?php
                     }?>
-                    <li><a href="#">Vagas</a></li>
+                    <li><a href="vagas.php">Vagas</a></li>
                     <li><a href="#">Cursos</a></li>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="#">Portal das empresas</a></li>
+                    <li><a href="empresa.php">Portal das empresas</a></li>
                 </ol>
             </nav>
     </header>

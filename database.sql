@@ -27,3 +27,13 @@ CREATE TABLE Empresa (
     cidade VARCHAR (50) NOT NULL,
     linkedin VARCHAR (100) NULL,
 );
+
+CREATE TABLE Vaga {
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    dataExclusao VARCHAR(12) NOT NULL,
+    descricao TEXT NOT NULL,
+    salario VARCHAR(50) NOT NULL,
+    idEmpresa INT NOT NULL,
+    FOREIGN KEY (idEmpresa) REFERENCES Empresa(id),
+}
