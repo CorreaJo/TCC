@@ -28,6 +28,15 @@
             <label for="numCasa">Número residencial:</label><br>
             <input type="text" name="numCasa">
             <br>
+            <label for="bairro">Bairro:</label><br>
+            <input type="text" name="bairro">
+            <br>
+            <label for="pcd">Usuario PCD:</label><br>
+            <select name="pcd">
+                <option value="sim">Sim</option>
+                <option value="nao">Nao</option>
+            </select>
+            <br>
             <label for="cidade">Cidade:</label><br>
             <input type="text" name="cidade">
             <br>
@@ -43,6 +52,10 @@
             <label for="senha">Senha:</label><br>
             <input type="password" name="senha">
             <br>
+            <input type="hidden" value="usuario" name="categoria">
+            <input type="hidden" value="nao" name="pcd">
+            <input type="hidden" value="vazio" name="escolaridade">
+            <input type="hidden" value="vazio" name="curriculo">
             <button class="botao">CADASTRAR</button>
         </form>
         <a href="../../frontend/index.php">Voltar para o login</a>

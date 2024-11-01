@@ -22,15 +22,19 @@ session_start();
             <nav id="menu" class="nav-list">
                 <ol id="menu-open">
                 <?php
+                    // verificar se esta logado
                     if(empty($_SESSION["email"]) ) {
                         ?><li><a class="link" href="index.php">Login</a></li><?php
                     } else {
-                        ?><li><a class="link" href="usuario.php">Portal do Candidato</a></li><?php
+                        if($_SESSION["categoria"] == "usuario") {
+                            ?><li><a class="link" href="usuario.php">Portal do Candidato</a></li><?php
+                        } else {
+                            ?><li><a class="link" href="empresa.php">Portal da Empresa</a></li><?php
+                        }
                     }?>
                     <li><a href="vagas.php">Vagas</a></li>
                     <li><a href="#">Cursos</a></li>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="empresa.php">Portal das empresas</a></li>
                 </ol>
             </nav>
     </header>

@@ -35,6 +35,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
             $_SESSION["cidade"] = $linha["cidade"];
             $_SESSION["linkedin"] = $linha["linkedin"];
             $_SESSION["id"] = $linha["id"];
+            $_SESSION["categoria"] = $linha["categoria"];
 
             header("location: ../frontend/home.php");
         }
@@ -48,12 +49,15 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
         $_SESSION["nome"] = $linha["nome"];
         $_SESSION["cpf"] = $linha["cpf"];
         $_SESSION["telefone"] = $linha["telefone"];
-        $_SESSION["rua"] = $linha["rua"];
+        $_SESSION["endereco"] = $linha["endereco"];
         $_SESSION["cep"] = $linha["cep"];
         $_SESSION["numCasa"] = $linha["numCasa"];
         $_SESSION["cidade"] = $linha["cidade"];
         $_SESSION["linkedin"] = $linha["linkedin"];
         $_SESSION["dNasc"] = $linha["dNasc"];
+        $_SESSION["categoria"] = $linha["categoria"];
+        $_SESSION["pcd"] = $linha["pcd"];
+        $_SESSION["curriculo"] = $linha["curriculo"];
         $_SESSION["id"] = $linha["id"];
         
         header("location: ../frontend/home.php");
