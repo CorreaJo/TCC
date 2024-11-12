@@ -2,6 +2,7 @@
 require "../backend/conexao.php";
 session_start();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,10 @@ session_start();
                     <li><a href="#">Cursos</a></li>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
                     <li><a href="empresa.php">Portal das empresas</a></li>
+                    <li><a href="../backend/curso/cadastrar-curso.php">cadastrar curso</a></li>
+                    <li><a href="../backend/medalha/cadastrar-medalha.php">cadastrar medalha</a></li>
+                    <li><a href="curso.php">Curso</a></li>
+                    <li><a href="medalha.php">medalhas</a></li>
                 </ol>
             </nav>
     </header>

@@ -1,6 +1,28 @@
 <?php
 session_start();    
 require "../backend/conexao.php";
+
+$id = $_SESSION["id"];
+
+$selectUsuario = "SELECT * FROM usuario WHERE id = $id";
+$resultUsuario = mysqli_query($conexao, $selectUsuario);
+$linhaUsuario = mysqli_fetch_assoc($resultUsuario);
+
+$img = $linhaUsuario["img"];
+
+$select = "SELECT * from medalha_usuario WHERE idUsuario = $id";
+$result = mysqli_query($conexao, $select);
+
+
+$medalhas = [];
+while($linha = mysqli_fetch_assoc($result)){
+    $idMedalha = $linha["idMedalha"]; 
+    $selectMedalha = "SELECT * FROM medalha WHERE id = $idMedalha";
+    $resultMedalha = mysqli_query($conexao, $selectMedalha);
+    $linha = mysqli_fetch_assoc($resultMedalha);
+
+    $medalhas[$linha["nome"]] = $linha["img"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +50,19 @@ require "../backend/conexao.php";
             </nav>
     </header>
     <div id="container-perfil">
-        <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
+        <img class="img-perfil" src="../backend/usuario/<?=$img?>" alt="foto de perfil">
         <h1 id=""><?= $_SESSION["nome"]?></h1>
 
     </div>
+
+    <?php
+        foreach ($medalhas as $key => $value) {
+            ?>
+                <img src="../backend/medalha/<?=$value?>" alt="">
+                <h2 style="color: white"><?=$key?></h2>
+            <?php
+        }
+    ?>
 
     <a class="sair" href="../backend/sair.php">Deslogar</a>  
 <script>

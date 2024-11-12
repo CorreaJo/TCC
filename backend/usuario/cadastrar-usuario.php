@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Complete os dados a seguir.</h1>
-        <form action="cadastro.php" method="post">
+        <form action="cadastro.php" method="post" enctype="multipart/form-data" accept=".png, .jpg, .jpeg">
             <label for="nome">Nome completo:</label><br>
             <input type="text" name="nome">
             <br>
@@ -36,6 +36,8 @@
             <br>
             <label for="dNasc">Data de Nascimento:</label><br>
             <input type="date" name="dNasc">
+            <br>
+            <input type="file" name="img">
             <br>
             <label for="email">Email:</label><br>
             <input type="email" name="email">
