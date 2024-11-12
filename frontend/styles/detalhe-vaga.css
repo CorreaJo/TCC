@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", system-ui;
+    font-weight: normal;
+}
+
+body {
+    background-color: black;
+}
+
+.menu-close {
+    background-color: #642898;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px
+}
+
+.menu-close img {
+    width: 100px;
+}
+
+#botao-menu {
+    display: block;
+    background-color: #642898;  
+    width: 30px;
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    margin-right: 10px;
+}
+
+.nav-list {
+    display: none;
+    background-color: white;
+}
+
+.nav-list ol{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.nav-list a {
+    color: black;
+    font-family: "Poppins", system-ui;
+    font-size: 18px;
+}
+
+#row {
+    background-color: #462856;
+    height: 3px;
+}
+
+.info-div {
+    margin-left: 10px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin: 20px 0px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.info {
+    color: white;
+}
+
+.descricao {
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.descricao h2 {
+    color: white;
+}
+
+.barra-title {
+    background-color: #539239;
+    height: 5px;
+    width: 60px;
+}
+
+#desc-text {
+    font-size: 15px;
+    margin-top: 10px;
+    text-indent: 20px;
+    text-align: justify;
+    margin-right: 10px;
+}
+
+.botao-usuario a{
+    background-color: #428228;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 30px;
+    border-radius: 40px;
+}
+
+.botao-usuario p{
+    color: white;
+    text-align: center;
+    background-color: rgba(206, 206, 206, 0.187);
+    padding: 10px;
+}
+
+.botao-usuario {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.botao-excluir a{
+    background-color: #bd1818;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 120px;
+}
+
+.botao-excluir a:hover {
+    background-color: #c10101;
+}
+
+.botao-excluir {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.botao-editar a{
+    background-color: #3551ae;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 126px;
+}
+
+.botao-editar a:hover {
+    background-color: #3463ff;
+}
+
+.botao-editar {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.users-info {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    align-items: center;
+}
+.users-info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 200%; 
+}
+
+.users-info h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.users-info a {
+    background-color: #428228;
+    color: white;
+    font-weight: 600;
+    padding: 2px 60px;
+    border-radius: 50px;
+}
+
+.users-info a:hover {
+    background-color: #326020;
+}

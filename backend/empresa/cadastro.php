@@ -9,9 +9,10 @@ $cidade = $_POST["cidade"];
 $linkedin = $_POST["linkedin"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
+$categoria = $_POST["categoria"];
 
 
-$sql= "INSERT INTO empresa (nome, senha, email, cnpj, telefone, cidade, linkedin) VALUE ('$nome', '$senha', '$email', '$cnpj', '$telefone', '$cidade', '$linkedin')";
+$sql= "INSERT INTO empresa (nome, senha, email, cnpj, telefone, cidade, linkedin, categoria) VALUE ('$nome', '$senha', '$email', '$cnpj', '$telefone', '$cidade', '$linkedin', '$categoria')";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

@@ -2,19 +2,19 @@
 
 require "../conexao.php";
 
+$id = $_POST['id'];
 $nome = $_POST['nome'];
 $cpf = $_POST["cpf"];
 $telefone = $_POST["tel"];
-$rua = $_POST["rua"];
+$endereco = $_POST["endereco"];
 $cep = $_POST["cep"];
-$numCasa = $_POST["numCasa"];
 $cidade = $_POST["cidade"];
 $linkedin = $_POST["linkedin"];
 $dNasc = $_POST["dNasc"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$sql= "UPDATE usuario SET nome = '$nome', senha = '$senha', telefone = '$telefone', rua = '$rua', cep = '$cep', numCasa = '$numCasa', cidade = '$cidade', linkedin = '$linkedin', dNasc = '$dNasc', email = '$email, WHERE cpf = '$cpf'";
+$sql= "UPDATE usuario SET nome = '$nome', senha = '$senha', telefone = '$telefone', endereco = '$endereco', cep = '$cep', cidade = '$cidade', linkedin = '$linkedin', dNasc = '$dNasc', email = '$email', cpf = '$cpf' WHERE id = '$id'";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {
