@@ -33,7 +33,7 @@ $nomeMedalha = $linhaCurso["nome"];
     <title>Curso - <?=$linhaCurso['nome']?></title>
 </head>
 <body>
-
+<?php require "componente/cabecalho.php"?>
     <?php
         if($index < count($aulas)){
             ?>
@@ -56,8 +56,6 @@ $nomeMedalha = $linhaCurso["nome"];
         }
     ?>
     
-    
+    <?php require "componente/rodape.php"?>
 </body>
-</html>
-
 </html>

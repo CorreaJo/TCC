@@ -29,20 +29,7 @@ $result= mysqli_query($conexao, $select);
                 <a id="a-error" href="home.php">Voltar para a página inicial!</a><?php
         } else {
             ?>
-            <header>
-                <div class="menu-close">
-                    <img src="img/logo.png" alt="">
-                    <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-                </div>
-                    <nav id="menu" class="nav-list">
-                        <ol id="menu-open">
-                            <li><a class="link" href="home.php">Inicio</a></li>
-                            <li><a href="#">Vagas</a></li>
-                            <li><a href="#">Cursos</a></li>
-                            <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                        </ol>
-                    </nav>
-            </header>
+            <?php require "componente/cabecalho.php"?>
             <div id="fundo-verde"></div>
             <div id="container-perfil">
                 <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
@@ -84,16 +71,8 @@ $result= mysqli_query($conexao, $select);
                                 <?php } ?>
                     </div>
                 </div>
-            <a class="sair" href="../backend/sair.php">Deslogar</a>  
-        <script>
-                function clickMenu () {
-                    if (menu.style.display == 'block') {
-                        menu.style.display = 'none';
-                    } else {
-                        menu.style.display = 'block';
-                    }
-                }
-            </script>
+            <a class="sair" href="../backend/sair.php">Deslogar</a>
+            <?php require "componente/rodape.php"?>
         </body>
         <?php
         }   

@@ -16,6 +16,7 @@ $result= mysqli_query($conexao, $select);
     <title>Cursos</title>
 </head>
 <body>
+<?php require "componente/cabecalho.php"?>
     <div>
         <?php
             while($linha = mysqli_fetch_assoc($result)){
@@ -27,5 +28,6 @@ $result= mysqli_query($conexao, $select);
             }
         ?>
     </div>
+    <?php require "componente/rodape.php"?>
 </body>
 </html>

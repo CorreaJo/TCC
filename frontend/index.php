@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,6 +16,16 @@
             <div><img src="img/img-login.png" alt="imagem de mulher login"></div>
             <div>
                 <form action="../backend/login.php" method="post">
+                    <?php
+                        if(isset($_SESSION["erro"])){
+                            
+                            //mexer no style
+                            ?>
+                                <h3 style="color: red;"><?=$_SESSION["erro"]?></h3>
+                            <?php
+                        }
+                    ?>
+                    
                     <label for="email">Email</label><br>
                     <input type="text" name="email"> 
 

@@ -18,7 +18,8 @@ require "../../backend/conexao.php";
         <form action="cadastro.php" method="post" enctype="multipart/form-data" accept=".png, .jpg, .jpeg">
             <input type="text" placeholder="Nome do Curso" name="nome">
             <input type="file" name="img">
-            <input type="number" name="totAulas">
+            <input type="number" name="totAulas" placeholder="Total de Aulas">
+            <input type="text" name="link" placeholder="Link do curso">
             <textarea name="descricao"></textarea>
             <button>Cadastrar</button>
         </form>

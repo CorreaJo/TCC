@@ -8,11 +8,12 @@ $telefone = $_POST["tel"];
 $cidade = $_POST["cidade"];
 $linkedin = $_POST["linkedin"];
 $email = $_POST["email"];
-$senha = $_POST["senha"];
 $categoria = $_POST["categoria"];
 
+$hashSenha =  base64_encode($_POST["senha"]);
 
-$sql= "INSERT INTO empresa (nome, senha, email, cnpj, telefone, cidade, linkedin, categoria) VALUE ('$nome', '$senha', '$email', '$cnpj', '$telefone', '$cidade', '$linkedin', '$categoria')";
+
+$sql= "INSERT INTO empresa (nome, senha, email, cnpj, telefone, cidade, linkedin, categoria) VALUE ('$nome', '$hashSenha', '$email', '$cnpj', '$telefone', '$cidade', '$linkedin', '$categoria')";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

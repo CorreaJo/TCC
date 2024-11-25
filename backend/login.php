@@ -8,26 +8,21 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-
-    $select = "SELECT * from usuario WHERE email='$email' and senha='$senha'";
-
+    $select = "SELECT * from usuario WHERE email='$email'";
     $resul = mysqli_query($conexao, $select);
     
 
     if(mysqli_num_rows($resul) < 1){
 
-        $select = "SELECT * from empresa WHERE email='$email' and senha='$senha'";
+        $select = "SELECT * from empresa WHERE email='$email'";
         $resulEmpresa = mysqli_query($conexao, $select);
 
-        if(mysqli_num_rows($resulEmpresa) < 1){
-            unset($_SESSION["email"]);
-            unset($_SESSION["senha"]);
+        $linha = mysqli_fetch_assoc($resulEmpresa);
+
+        if(base64_decode($linha["senha"]) != $senha ){
+            $_SESSION["erro"] = "Email ou senha errados!";
             header("location: ../frontend/index.php");
         } else {
-
-            $linha = mysqli_fetch_assoc($resulEmpresa);
-
-            $_SESSION["senha"] = $senha;
             $_SESSION["email"] = $email;
             $_SESSION["nome"] = $linha["nome"];
             $_SESSION["cnpj"] = $linha["cnpj"];
@@ -43,13 +38,18 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
     } else {
 
         $linha = mysqli_fetch_assoc($resul);
-
-        $_SESSION["senha"] = $senha;
-        $_SESSION["email"] = $email;
-        $_SESSION["nome"] = $linha["nome"];
-        $_SESSION["id"] = $linha["id"];
+        if(base64_decode($linha["senha"]) != $senha ){
+            $_SESSION["erro"] = "Email ou senha errados!";
+            header("location: ../frontend/index.php");
+        } else {
+            $_SESSION["email"] = $email;
+            $_SESSION["categoria"] = $linha["categoria"];
+            $_SESSION["nome"] = $linha["nome"];
+            $_SESSION["id"] = $linha["id"];
         
         header("location: ../frontend/home.php");
+        }
+        
     }
    
 }

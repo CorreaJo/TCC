@@ -6,6 +6,7 @@ $nome = $_POST['nome'];
 $img = $_POST["img"];
 $totAulas = $_POST["totAulas"];
 $descricao = $_POST["descricao"];
+$link = $_POST["link"];
 
 $dir = "uploads/"; 
 // recebendo o arquivo multipart 
@@ -21,7 +22,7 @@ else {
 }    
 
 
-$sql= "INSERT INTO Curso (nome, img, totAulas, descricao) VALUE ('$nome', '$nomeImg', $totAulas, '$descricao')";
+$sql= "INSERT INTO Curso (nome, img, totAulas, descricao, link) VALUE ('$nome', '$nomeImg', $totAulas, '$descricao', '$link')";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

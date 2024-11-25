@@ -53,20 +53,7 @@ $linhaHAB = mysqli_fetch_assoc($resultHAB);
         // verifica se for empresa, nao permite
         if ($_SESSION['categoria'] == 'empresa') {
             ?>
-            <header>
-                <div class="menu-close">
-                    <img src="img/logo.png" alt="">
-                    <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-                </div>
-                    <nav id="menu" class="nav-list">
-                        <ol id="menu-open">
-                            <li><a class="link" href="empresa.php">Portal da Empresa</a></li>
-                            <li><a class="link" href="vagas.php">Vagas</a></li>
-                            <li><a href="#">Cursos</a></li>
-                            <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                        </ol>
-                    </nav>
-            </header>
+            <?php require "componente/cabecalho.php"?>
             <div id="fundo-verde"></div>
             <div id="container-perfil">
                 <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
@@ -164,14 +151,6 @@ $linhaHAB = mysqli_fetch_assoc($resultHAB);
             <h1 id="h1-error">Voce nao tem permissão!</h1>
             <a id="a-error" href="home.php">Voltar para a página inicial!</a><?php
         }}?>
-<script>
-    function clickMenu () {
-        if (menu.style.display == 'block') {
-            menu.style.display = 'none';
-        } else {
-            menu.style.display = 'block';
-        }
-    }
-</script>
+        <?php require "componente/rodape.php"?>
 </body>
 </html>

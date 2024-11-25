@@ -6,36 +6,10 @@ $id = $_SESSION["id"];
 
 $selectUsuario = "SELECT * FROM usuario WHERE id = $id";
 $resultUsuario = mysqli_query($conexao, $selectUsuario);
-$linhaUsuario = mysqli_fetch_assoc($resultUsuario);
+$usuario = mysqli_fetch_assoc($resultUsuario);
 
-$img = $linhaUsuario["img"];
+$img = $usuario["img"];
 
-$select = "SELECT * from medalha_usuario WHERE idUsuario = $id";
-$result = mysqli_query($conexao, $select);
-
-
-$medalhas = [];
-while($linha = mysqli_fetch_assoc($result)){
-    $idMedalha = $linha["idMedalha"]; 
-    $selectMedalha = "SELECT * FROM medalha WHERE id = $idMedalha";
-    $resultMedalha = mysqli_query($conexao, $selectMedalha);
-    $linha = mysqli_fetch_assoc($resultMedalha);
-
-    $medalhas[$linha["nome"]] = $linha["img"];
-}
-
-
-//CODIGO PRA VISULIZAR AS MEDALHAS
-
-/*<?php
-        foreach ($medalhas as $key => $value) {
-            ?>
-                <img src="../backend/medalha/<?=$value?>" alt="">
-                <h2 style="color: white"><?=$key?></h2>
-            <?php
-        }
-    ?>
-*/
 
 ?>
 
@@ -61,25 +35,12 @@ while($linha = mysqli_fetch_assoc($result)){
                 <a id="a-error" href="home.php">Voltar para a página inicial!</a><?php
         } else {
             ?>
-            <header>
-                <div class="menu-close">
-                    <img src="img/logo.png" alt="">
-                    <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-                </div>
-                    <nav id="menu" class="nav-list">
-                        <ol id="menu-open">
-                            <li><a class="link" href="home.php">Inicio</a></li>
-                            <li><a class="link" href="vagas.php">Vagas</a></li>
-                            <li><a href="#">Cursos</a></li>
-                            <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                        </ol>
-                    </nav>
-            </header>
+            <?php require "componente/cabecalho.php"?>
             <div id="fundo-verde"></div>
             <div id="container-perfil">
                 <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
                 <div class="users-info">
-                    <h1 id="name"><?= $_SESSION["nome"]?></h1>
+                    <h1 id="name"><?= $usuario["nome"]?></h1>
                     
                 </div>   
             </div>
@@ -87,12 +48,12 @@ while($linha = mysqli_fetch_assoc($result)){
                     <h1 class="title-divs">Informações Pessoais</h1>
                     <div class="barra-title"></div>
                     <div class="infos-div">
-                    <p><strong>Email:</strong> <?= $_SESSION["email"]?></p>
-                    <p><strong>Contato:</strong> <?= $_SESSION["telefone"]?></p>
-                    <p><strong>Linkedin:</strong> <?= $_SESSION["linkedin"]?></p>
-                    <p><strong>CPF:</strong> <?= $_SESSION["cpf"]?></p>
-                    <p><strong>Data de nascimento:</strong> <?= $_SESSION["dNasc"]?></p>
-                    <p><strong>Endereço:</strong> <?= $_SESSION["endereco"]?> - <?= $_SESSION["cidade"]?> - <?= $_SESSION["cep"]?></p>  
+                    <p><strong>Email:</strong> <?= $usuario["email"]?></p>
+                    <p><strong>Contato:</strong> <?= $usuario["telefone"]?></p>
+                    <p><strong>Linkedin:</strong> <?= $usuario["linkedin"]?></p>
+                    <p><strong>CPF:</strong> <?= $usuario["cpf"]?></p>
+                    <p><strong>Data de nascimento:</strong> <?= $usuario["dNasc"]?></p>
+                    <p><strong>Endereço:</strong> <?= $usuario["endereco"]?></p>  
                 </div>
                 <a class="botao-editar" href="../backend/usuario/editar-usuario.php">Editar</a>
             </div>
@@ -168,7 +129,7 @@ while($linha = mysqli_fetch_assoc($result)){
                     </div>
                     <div>
                         <h1 class="title-divs black-title">Seu Curriculo</h1>
-                        <?php if($_SESSION['curriculo'] == "vazio") {
+                        <?php if($usuario['curriculo'] == "vazio") {
                             ?>
                             <h1 class="h1-textVazio">Você não possui curriculo cadastrado!</h1>
                             <?php
@@ -241,21 +202,14 @@ while($linha = mysqli_fetch_assoc($result)){
                             </div>
                         <?php }} ?>
             </div>
-            <a class="sair" href="../backend/sair.php">Deslogar</a>  
-        <script>
-                function clickMenu () {
-                    if (menu.style.display == 'block') {
-                        menu.style.display = 'none';
-                    } else {
-                        menu.style.display = 'block';
-                    }
-                }
-            </script>
+            <a class="sair" href="../backend/sair.php">Deslogar</a>
+            <?php require "componente/rodape.php"?> 
         </body>
         <?php   
     }
 }
-?>  
+?>
+
 </html>
 
     

@@ -2,6 +2,11 @@
 require "../backend/conexao.php";
 session_start();
 
+$select = "SELECT * FROM Vaga LIMIT 3";
+$result = mysqli_query($conexao, $select);
+
+$selectCurso = "SELECT * FROM curso LIMIT 3";
+$resultCurso = mysqli_query($conexao, $selectCurso);
 
 ?>
 
@@ -12,46 +17,43 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Home</title>
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/vaga.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header>
-        <div class="menu-close">
-            <img src="img/logo.png" alt="">
-            <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-        </div>
-            <nav id="menu" class="nav-list">
-                <ol id="menu-open">
-                <?php
-                    // verificar se esta logado
-                    if(empty($_SESSION["email"]) ) {
-                        ?><li><a class="link" href="index.php">Login</a></li><?php
-                    } else {
-                        if($_SESSION["categoria"] == "usuario") {
-                            ?><li><a class="link" href="usuario.php">Portal do Candidato</a></li><?php
-                        } else {
-                            ?><li><a class="link" href="empresa.php">Portal da Empresa</a></li><?php
-                        }
-                    }?>
-                    <li><a href="vagas.php">Vagas</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="empresa.php">Portal das empresas</a></li>
-                    <li><a href="../backend/curso/cadastrar-curso.php">cadastrar curso</a></li>
-                    <li><a href="../backend/medalha/cadastrar-medalha.php">cadastrar medalha</a></li>
-                    <li><a href="curso.php">Curso</a></li>
-                    <li><a href="medalha.php">medalhas</a></li>
-                </ol>
-            </nav>
-    </header>
-    <script>
-        function clickMenu () {
-            if (menu.style.display == 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-    </script>
+    <?php require "componente/cabecalho.php"?>
+    <div class="vagas-container">
+        <?php
+            while($linha = mysqli_fetch_assoc($result)){
+                // while para listar vagas
+                $idEmpresa = $linha['idEmpresa'];
+                $selectEmpresa = "SELECT * from empresa WHERE id = $idEmpresa";
+                $resultEmpresa = mysqli_query($conexao, $selectEmpresa);
+                $linhaEmpresa = mysqli_fetch_assoc($resultEmpresa)
+                ?> 
+                <div class="vaga-style">
+                    <h1 class="title-vaga"><?=$linha["função"]?></h1>
+                    <hr>
+                    <h1 class="info"><?=$linhaEmpresa["nome"]?></h1>
+                    <h1 class="info"><?=$linha["cidade"]?></h1>
+                    <h1 class="info periodo"><?=$linha["periodo"]?></h1>
+                    <a class="botao-detalhar" href="detalhe-vaga.php?id=<?=$linha['id']?>">VER DETALHES ></a>
+                </div>
+                <?php 
+            } 
+        ?>
+    </div>
+    <div class="cursos-container">
+    <?php
+            while($linha = mysqli_fetch_assoc($resultCurso)){
+                ?> 
+                <div class="curso-style">
+                    <h1 class="title-vaga"><?=$linha["nome"]?></h1>
+                </div>
+                <?php 
+            } 
+        ?>
+    </div>
+    <?php require "componente/rodape.php"?>
 </body>
 </html>

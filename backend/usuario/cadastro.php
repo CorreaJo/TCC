@@ -14,8 +14,10 @@ $cidade = $_POST["cidade"];
 $linkedin = $_POST["linkedin"];
 $dNasc = $_POST["dNasc"];
 $email = $_POST["email"];
-$senha = $_POST["senha"];
 $img = $_POST["img"];
+
+
+$hashSenha =  base64_encode($_POST["senha"]);
 
 
 $dir = "uploads/"; 
@@ -37,7 +39,7 @@ $curriculo = $_POST["curriculo"];
 $escolaridade = $_POST["escolaridade"];
 
 
-$sql= "INSERT INTO Usuario (nome, senha, email, cpf, telefone, endereco, cep, cidade, img, linkedin, dNasc, categoria, pcd, escolaridade, curriculo) VALUE ('$nome', '$senha', '$email', '$cpf', '$telefone', '$endereco', '$cep', '$cidade', '$nomeImg', '$linkedin', '$dNasc','$categoria', '$pcd', '$escolaridade','$curriculo')";
+$sql= "INSERT INTO Usuario (nome, senha, email, cpf, telefone, endereco, cep, cidade, img, linkedin, dNasc, categoria, pcd, escolaridade, curriculo) VALUE ('$nome', '$hashSenha', '$email', '$cpf', '$telefone', '$endereco', '$cep', '$cidade', '$nomeImg', '$linkedin', '$dNasc','$categoria', '$pcd', '$escolaridade','$curriculo')";
 
 $result= mysqli_query($conexao, $sql);
 

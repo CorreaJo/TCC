@@ -43,7 +43,7 @@ CREATE TABLE Vaga (
     salario VARCHAR(50) NOT NULL,
     dataExclusao VARCHAR(12) NOT NULL,
     idEmpresa INT NOT NULL,
-    FOREIGN KEY (idEmpresa) REFERENCES Empresa(id),
+    FOREIGN KEY (idEmpresa) REFERENCES Empresa(id)
 );
 
 
@@ -51,28 +51,16 @@ CREATE TABLE Curso (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     img VARCHAR(100) NOT NULL,
+    link VARCHAR(100) NOT NULL,
     descricao TEXT NOT NULL,
     tot-aulas INT NOT NULL
 );
 
 CREATE TABLE Curso_Aula (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    link VARCHAR(100) NOT NULL
+    link VARCHAR(100) NOT NULL,
     idCurso INT NOT NULL,
     FOREIGN KEY (idCurso) REFERENCES Curso(id)
-);
-
-CREATE TABLE Medalha (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    img VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE Medalha_Usuario (
-    idUsuario int NOT NULL,
-    idMedalha int NOT NULL,
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(id),
-    FOREIGN KEY (idMedalha) REFERENCES Medalha(id)
 );
 
 
