@@ -8,9 +8,9 @@ $select = "SELECT * from vaga WHERE id = $id";
 $result= mysqli_query($conexao, $select);
 $linha = mysqli_fetch_assoc($result);
 
-$idEmpresa = $_SESSION['id'];
+$idEmpresa = $linha['idEmpresa'];
 
-$selectEmpresa = "SELECT * from empresa WHERE id = $idEmpresa";
+$selectEmpresa = "SELECT * from Empresa WHERE id = $idEmpresa";
 $resultEmpresa = mysqli_query($conexao, $selectEmpresa);
 $linhaEmpresa = mysqli_fetch_assoc($resultEmpresa)
 ?>
@@ -78,7 +78,7 @@ $linhaEmpresa = mysqli_fetch_assoc($resultEmpresa)
                             while($linhaVaga = mysqli_fetch_assoc($resultVaga)){
                             ?>
                                 <div class="users-info">
-                                    <img src="img/perfil.png" alt="perfil usuario">
+                                    <img src="../backend/usuario/<?=$linhaVaga["img"]?>" alt="perfil usuario">
                                     <div>
                                         <h1 class="title-vaga"><?=$linhaVaga["nome"]?></h1>
                                         <a href="ver-perfil.php?id=<?=$linhaVaga['id']?>    " class="link-pefil">VER PERFIL</a>

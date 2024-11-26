@@ -53,7 +53,7 @@ CREATE TABLE Curso (
     img VARCHAR(100) NOT NULL,
     link VARCHAR(100) NOT NULL,
     descricao TEXT NOT NULL,
-    tot-aulas INT NOT NULL
+    tot_aulas INT NOT NULL
 );
 
 CREATE TABLE Curso_Aula (

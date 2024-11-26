@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "../backend/conexao.php";
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,22 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header>
-        <div class="menu-close">
-            <img src="img/logo.png" alt="">
-            <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-        </div>
-            <nav id="menu" class="nav-list">
-                <ol id="menu-open">
-                    <li><a href="index.php">Login</a></li>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Vagas</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Portal das empresas</a></li>
-                    <li><a href="#">Portal do candidato</a></li>
-                </ol> 
-            </nav>
-    </header>
+<?php require "componente/cabecalho.php"?>
     <main>
         <div class="main">
         <h1>SOBRE NÓS</h1>
