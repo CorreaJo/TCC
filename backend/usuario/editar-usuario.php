@@ -43,9 +43,6 @@ session_start();
             <label for="email">Email:</label><br>
             <input type="email" name="email" value="<?=$_SESSION['email']?>">
             <br>
-            <label for="senha">Senha:</label><br>
-            <input type="password" name="senha" value="<?=$_SESSION['senha']?>">
-            <br>
             <input type="hidden" value="usuario" name="categoria">
             <input type="hidden" value="<?=$_SESSION['id']?>" name="id">
             <button class="botao">EDITAR</button>

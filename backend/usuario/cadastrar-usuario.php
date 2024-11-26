@@ -35,8 +35,8 @@
             <br>
             <label for="pcd">Usuario PCD:</label><br>
             <select name="pcd">
-                <option value="sim">Sim</option>
                 <option value="nao">Nao</option>
+                <option value="sim">Sim</option>
             </select>
             <br>
             <label for="cidade">Cidade:</label><br>
@@ -48,7 +48,8 @@
             <label for="dNasc">Data de Nascimento:</label><br>
             <input type="date" name="dNasc">
             <br>
-            <input type="file" name="img">
+            <label for="img">Imagem de perfil:</label><br>
+            <input type="file" name="img" style="color: white">
             <br>
             <label for="email">Email:</label><br>
             <input type="email" name="email">

@@ -56,7 +56,7 @@ $linhaHAB = mysqli_fetch_assoc($resultHAB);
             <?php require "componente/cabecalho.php"?>
             <div id="fundo-verde"></div>
             <div id="container-perfil">
-                <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
+                <img class="img-perfil" src="../backend/usuario/<?=$linha["img"]?>" alt="foto de perfil">
                 <div class="users-info">
                     <h1 id="name"><?= $linha["nome"]?></h1>   
                 </div>   

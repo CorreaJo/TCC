@@ -22,7 +22,7 @@ else {
 }    
 
 
-$sql= "INSERT INTO Curso (nome, img, totAulas, descricao, link) VALUE ('$nome', '$nomeImg', $totAulas, '$descricao', '$link')";
+$sql= "INSERT INTO Curso (nome, img, tot_aulas, descricao, link) VALUE ('$nome', '$nomeImg', '$totAulas', '$descricao', '$link')";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

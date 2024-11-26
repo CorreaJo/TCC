@@ -71,7 +71,6 @@ $result= mysqli_query($conexao, $select);
                                 <?php } ?>
                     </div>
                 </div>
-            <a class="sair" href="../backend/sair.php">Deslogar</a>
             <?php require "componente/rodape.php"?>
         </body>
         <?php

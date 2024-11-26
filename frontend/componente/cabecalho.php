@@ -25,9 +25,9 @@
                         }
                     ?>
                     <li><a href="vagas.php">Vagas</a></li>
-                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="../backend/curso/cadastrar-curso.php">cadastrar curso</a></li>
+                    <li><a href="sobre-nos.php ">Sobre Nós</a></li>
                     <li><a href="curso.php">Cursos</a></li>
+                    <li><a href="../backend/sair.php" style="color: rgb(192, 1, 1); font-weight: bold; font-style: italic;">Deslogar</a></li>
                 </ol>
             </nav>
     </header>
