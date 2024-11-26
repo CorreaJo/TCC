@@ -10,6 +10,8 @@ require "../../conexao.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Cadastrar Vaga</title>
     <link rel="stylesheet" href="../../../frontend/styles/cadastro-vaga.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 </head>
 <body>
 <div class="container">
@@ -36,7 +38,7 @@ require "../../conexao.php";
         <textarea name="desc" id=""></textarea>
         <br>
         <label for="salario">Salário</label><br>
-        <input type="text" name="salario">
+        <input type="text" name="salario" id="salario">
         <br>
         <label for="data">Data:</label><br>
         <input type="text" name="data" placeholder="Data:">
@@ -45,4 +47,10 @@ require "../../conexao.php";
     </form>
 </div>
 </body>
+<script>
+        $(document).ready(function(){
+            $('#salario').mask('##.##0,00', {reverse: true});
+            $('#cnpj').mask('00.000.000/0001-00', {reverse: true});
+        });
+      </script>
 </html>

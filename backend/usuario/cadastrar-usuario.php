@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Cadastrar Usuario</title>
     <link rel="stylesheet" href="../../frontend/styles/cadastro-usuario.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,13 +16,13 @@
             <input type="text" name="nome">
             <br>
             <label for="cpf">CPF:</label><br>
-            <input type="text" name="cpf">
+            <input type="text" name="cpf" id="cpf">
             <br>
             <label for="tel">Telefone ou Celular:</label><br>
-            <input type="text" name="tel">
+            <input type="text" name="tel" id="telefone">
             <br>
             <label for="cep">CEP:</label><br>
-            <input type="text" name="cep">
+            <input type="text" name="cep" id="cep">
             <br>
             <label for="rua">Rua:</label><br>
             <input type="text" name="rua">
@@ -63,4 +65,12 @@
         <a href="../../frontend/index.php">Voltar para o login</a>
     </div>
 </body>
+<script>
+        $(document).ready(function(){
+             $('#cep').mask('00000-000');
+             $('#telefone').mask('(00) 00000-0000');
+             $('#cpf').mask('000.000.000-00', {reverse: true});
+             $('#rg').mask('00.000.000-00', {reverse: true});
+        });
+      </script>
 </html>

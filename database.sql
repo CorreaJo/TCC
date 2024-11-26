@@ -8,7 +8,7 @@ CREATE TABLE Usuario (
     categoria VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL,
-    cpf VARCHAR(14) NOT NULL,
+    cpf VARCHAR(20) NOT NULL,
     telefone VARCHAR(25) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
     cep VARCHAR(20) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE Curso (
     img VARCHAR(100) NOT NULL,
     link VARCHAR(100) NOT NULL,
     descricao TEXT NOT NULL,
-    tot-aulas INT NOT NULL
+    totAulas INT NOT NULL
 );
 
 CREATE TABLE Curso_Aula (
