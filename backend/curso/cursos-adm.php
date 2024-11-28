@@ -31,6 +31,7 @@ while($linha = mysqli_fetch_assoc($result)){
     if($_SESSION["email"] == "admin@admin") {
         ?>
         <a href="../../backend/curso/cadastrar-aula.php?id=<?=$linha["id"]?>">Cadastrar Aula</a>
+        <a href="../../frontend/empresa.php">Voltar para o perfil</a>
     <?php
     }
 }

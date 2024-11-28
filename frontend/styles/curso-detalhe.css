@@ -1,13 +1,6 @@
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 8px;
-    width: 40%;
-    background: linear-gradient(to right, rgb(86, 204, 242), rgb(47, 128, 237));
-    transition: width 0.2s ease-out;
-}
+
 
 #avancar {
     display: none;
 }
+

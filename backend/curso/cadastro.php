@@ -3,7 +3,6 @@
 require "../conexao.php";
 
 $nome = $_POST['nome'];
-$img = $_POST["img"];
 $totAulas = $_POST["totAulas"];
 $descricao = $_POST["descricao"];
 $link = $_POST["link"];
@@ -22,7 +21,7 @@ else {
 }    
 
 
-$sql= "INSERT INTO Curso (nome, img, tot_aulas, descricao, link) VALUE ('$nome', '$nomeImg', '$totAulas', '$descricao', '$link')";
+$sql= "INSERT INTO Curso (nome, img, totAulas, descricao, link) VALUE ('$nome', '$nomeImg', '$totAulas', '$descricao', '$link')";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

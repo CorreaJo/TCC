@@ -13,6 +13,18 @@ body {
     background-color: black;
 }
 
+.img-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .menu-close {
     background-color: #642898;
     display: block;
@@ -166,6 +178,7 @@ body {
     margin-left: 10px;
     align-items: center;
 }
+
 .users-info img {
     width: 70px;
     height: 70px;

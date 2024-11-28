@@ -13,6 +13,7 @@ body {
     
 }
 
+
 .img-curso {
     width: 150px;
     height: 150px;
@@ -21,15 +22,13 @@ body {
 .cursos-container {
     display: flex;
     margin-left: 10px;
-    margin-right: 10px;
     gap: 20px;
     margin-top: 30px;
 }
 
 .desc-curso .title a{
     color: white;
-    font-size: 30px;
-    word-spacing: 2px;
+    font-size: 20px;
 }
 
 .desc-curso .desc {

@@ -17,6 +17,7 @@ $result = mysqli_query($conexao, $select);
 $aulas = [];
 while($linha = mysqli_fetch_assoc($result)){
     $aulas[] = $linha["link"];
+    $title[] = $linha['titulo'];
 }
 
 $nomeMedalha = $linhaCurso["nome"];
@@ -30,32 +31,121 @@ $nomeMedalha = $linhaCurso["nome"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/curso-detalhe.css" />
-    <title>Curso - <?=$linhaCurso['nome']?></title>
+    <title>CordWork - <?=$linhaCurso['nome']?></title>
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", system-ui;
+}
+
+iframe {
+    border: 0px;
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    margin-top: 30px
+}
+
+.container {
+    margin-left: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 30px
+}
+
+p {
+    color: white;   
+}
+
+.container-extra {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.img-curso {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: block;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+.botton {
+    background-color: #539239;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.link {
+    color: white;
+    background-c
+}
+
+</style>
 <body>
 <?php require "componente/cabecalho.php"?>
     <?php
+    
+    if($link != '@'){
+        ?>
+                <iframe title="YouTube video player" src="https://www.youtube.com/embed/<?=$link?>"></iframe>
+        <?php        
+    }
         if($index < count($aulas)){
             ?>
-                <a href="curso-detalhes.php?id=<?=$id?>&link=<?=$aulas[$index]?>&index=<?=$index+1?>">Próxima aula</a>
-            <?php
+            <div class="button-div">
+                <a class="botton" href="curso-detalhes.php?id=<?=$id?>&link=<?=$aulas[$index]?>&index=<?=$index+1?>">Próxima aula</a>
+            </div>
+                <?php
         } else if($index == count($aulas)){
             ?>
-                <a href="../backend/usuario/vinculo-medalha.php?nome=<?=$nomeMedalha?>">Finalizar curso</a>
+            <div class="button-div">
+                <a class="botton" href="../backend/usuario/vinculo-medalha.php?nome=<?=$nomeMedalha?>">Finalizar curso</a>
+            </div>
             <?php
         } else if($index == 100){
             ?>
-                <a href="curso-detalhes.php?id=<?=$id?>&link=<?=$aulas[0]?>&index=1">Começar Curso</a>
+            <div class="container">
+                <h1 class="title"><?=$linhaCurso['nome']?></h1>
+                <img class="img-curso" src="../backend/curso/<?=$linhaCurso["img"]?>" alt="Capa do curso">
+                <div class="container-extra">
+                    <p class="total">Total de aulas: <?=$linhaCurso['totAulas']?></p>
+                    <p><?=$linhaCurso['descricao']?></p>
+                </div>
+                <div class="button-div">
+                    <a class="botton" href="curso-detalhes.php?id=<?=$id?>&link=<?=$aulas[0]?>&index=1">INICIAR CURSO</a>
+                </div>
+                
+            </div>
+                
             <?php
         }
 
-        if($link != '@'){
-            ?>
-                <div id="player"><iframe src="<?=$link?>" frameborder="0"></iframe></div>
-            <?php        
-        }
+        
     ?>
-    
-    <?php require "componente/rodape.php"?>
 </body>
 </html>

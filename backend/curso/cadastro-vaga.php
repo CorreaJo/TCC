@@ -3,11 +3,12 @@
 require "../conexao.php";
 
 $link = $_POST['link'];
+$title = $_POST['title'];
 $id = $_POST["id"];
 
 
 
-$sql= "INSERT INTO Curso_aula (link, idCurso) VALUE ('$link', $id)";
+$sql= "INSERT INTO Curso_aula (link, titulo, idCurso) VALUE ('$link', '$title', $id)";
 $result= mysqli_query($conexao, $sql);
 
 if($result) {

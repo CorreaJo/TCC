@@ -28,8 +28,16 @@ $linhaEmpresa = mysqli_fetch_assoc($resultEmpresa)
 <?php require "componente/cabecalho.php"?>
     <div class="info-div">
         <h1 class="title"><?=$linha["função"]?></h1>
-        <h3 class="info"><?=$linhaEmpresa["nome"]?></h3>
-        <h3 class="info"><?=$linha["cidade"]?></h3>
+        <div class="info-container">
+            <div>
+                <img class="img-perfil" src="../backend/<?=$linhaEmpresa['img']?>" alt="foto de perfil">
+            </div>
+            <div>
+                <h3 class="info"><?=$linhaEmpresa["nome"]?></h3>
+                <h3 class="info"><?=$linha["cidade"]?></h3>
+            </div>
+        </div>
+
     </div>
     <div class="descricao">
         <h2>Descrição</h2>

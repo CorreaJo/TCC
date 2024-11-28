@@ -32,9 +32,9 @@ $result= mysqli_query($conexao, $select);
             <?php require "componente/cabecalho.php"?>
             <div id="fundo-verde"></div>
             <div id="container-perfil">
-                <img class="img-perfil" src="img/perfil.png" alt="foto de perfil">
+                <img class="img-perfil" src="../backend/<?=$_SESSION["img"]?>" alt="foto de perfil">
                 <div class="users-info">
-                    <h1 id="name"><?= $_SESSION["nome"]?></h1>
+                    <h1 id="name"><?=$_SESSION["nome"]?></h1>
                 </div>   
             </div>
                 <div>
@@ -71,7 +71,12 @@ $result= mysqli_query($conexao, $select);
                                 <?php } ?>
                     </div>
                 </div>
-            <?php require "componente/rodape.php"?>
+                <?php
+                if($_SESSION["email"] == "admin@admin") {
+                ?>
+                <a href="../backend/curso/cadastrar-curso.php" style="color: red; margin-left: 5px">Cadastrar curso</a>
+                <a href="../backend/curso/cursos-adm.php" style="color: red; margin-left: 5px">Cursos cadastrados</a>
+            <?php } require "componente/rodape.php"?> 
         </body>
         <?php
         }   

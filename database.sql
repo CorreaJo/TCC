@@ -27,7 +27,7 @@ CREATE TABLE Empresa (
     email VARCHAR(100) NOT NULL UNIQUE,
     img VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    cnpj VARCHAR(14) NOT NULL,
+    cnpj VARCHAR(20) NOT NULL,
     categoria VARCHAR(100) NOT NULL,
     telefone VARCHAR(25) NOT NULL,
     cidade VARCHAR (50) NOT NULL,
@@ -59,11 +59,11 @@ CREATE TABLE Curso (
 
 CREATE TABLE Curso_Aula (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
     link VARCHAR(100) NOT NULL,
     idCurso INT NOT NULL,
     FOREIGN KEY (idCurso) REFERENCES Curso(id)
 );
-
 
 CREATE TABLE inscricao_vaga (
     id INT AUTO_INCREMENT PRIMARY KEY,

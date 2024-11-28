@@ -33,7 +33,7 @@ require "../../backend/conexao.php";
             <br>
             <button>Cadastrar</button>
         </form>
-        <a href="../../frontend/index.php">Voltar para o login</a>
+        <a href="../../frontend/empresa.php">Voltar para o perfil</a>
     </div>
 </body>
 </html>

@@ -24,21 +24,7 @@ require "../backend/conexao.php";
         </div>
     </main>
     <footer>
-        <div class="rodape">
-            <div class="footer-title">
-                <h3>INFOS</h3>
-            </div>
-            <ol>
-                <li><a href="#">VAGAS</a></li>
-                <li><a href="#">CURSOS</a></li>
-                <li><a href="sobre-nos.html">SOBRE NÓS</a></li>
-                <li><a href="#">PORTAL DO CANDIDATO</a></li>
-                <li><a href="#">PORTAL DA EMPRESA</a></li>
-            </ol>
-            <div class="sub-footer">
-                <p>© 2024 Copyright - CordWork</p>
-            </div>    
-        </div>
+    <?php require "componente/rodape.php"?>
     </footer>
     <script>
         function clickMenu () {

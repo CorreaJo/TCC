@@ -18,20 +18,22 @@ $result= mysqli_query($conexao, $select);
 </head>
 <body>
 <?php require "componente/cabecalho.php"?>
-    <div class="cursos-container">
+    <div class="cursos">
         <?php
             while($linha = mysqli_fetch_assoc($result)){
                 ?>
-                <div>
-                    <img class="img-curso" src="../backend/curso/<?=$linha["img"]?>" alt="Capa do curso">
-                </div>
-                <div class="desc-curso">
-                    <h1 class="title"><a href="curso-detalhes.php?id=<?=$linha["id"]?>&link=@&index=100"><?=$linha["nome"]?></a></h1>
-                    <p class="desc"><?=$linha["descricao"]?></p>
+                <div class="cursos-container">
+                    <div>
+                        <img class="img-curso" src="../backend/curso/<?=$linha["img"]?>" alt="Capa do curso">
+                    </div>
+                    <div class="desc-curso">
+                        <h1 class="title"><a href="curso-detalhes.php?id=<?=$linha["id"]?>&link=@&index=100"><?=$linha["nome"]?></a></h1>
+                        <p class="desc"><?=$linha["descricao"]?></p>
+                    </div>
                 </div>
                 <?php
             }
-        ?>  
+        ?> 
     </div>
     <?php require "componente/rodape.php"?>
 </body>

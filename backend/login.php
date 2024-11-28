@@ -31,7 +31,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
             $_SESSION["linkedin"] = $linha["linkedin"];
             $_SESSION["id"] = $linha["id"];
             $_SESSION["categoria"] = $linha["categoria"];
-
+            $_SESSION["img"] = $linha["img"];
             header("location: ../frontend/home.php");
         }
             
