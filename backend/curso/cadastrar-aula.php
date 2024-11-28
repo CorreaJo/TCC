@@ -18,7 +18,6 @@ $id = $_GET["id"];
     <div class="container">
         <h1>Complete os dados a seguir.</h1>
         <form action="cadastro-vaga.php" method="post" enctype="multipart/form-data" accept=".png, .jpg, .jpeg">
-            <input type="text" placeholder="Titulo da aula" name="title">    
             <input type="text" placeholder="link da aula" name="link">
             <input type="hidden" name="id" VALUE="<?=$id?>">
             <button>Cadastrar</button>

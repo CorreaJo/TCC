@@ -17,7 +17,6 @@ $result = mysqli_query($conexao, $select);
 $aulas = [];
 while($linha = mysqli_fetch_assoc($result)){
     $aulas[] = $linha["link"];
-    $title[] = $linha['titulo'];
 }
 
 $nomeMedalha = $linhaCurso["nome"];
@@ -124,7 +123,7 @@ p {
         } else if($index == count($aulas)){
             ?>
             <div class="button-div">
-                <a class="botton" href="../backend/usuario/vinculo-medalha.php?nome=<?=$nomeMedalha?>">Finalizar curso</a>
+                <a class="botton" href="../frontend/finalizar.php?id=<?=$id?>">Finalizar curso</a>
             </div>
             <?php
         } else if($index == 100){
