@@ -6,7 +6,7 @@
 </head>
 <header>
         <div class="menu-close">
-            <img src="img/logo.png" alt="">
+            <a href="../frontend/home.php"><img src="img/logo.png" alt=""></a>
             <span id="botao-menu" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         </div>
             <nav id="menu" class="nav-list">

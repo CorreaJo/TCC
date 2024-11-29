@@ -167,6 +167,7 @@ $img = $usuario["img"];
                 }?>
             </div>
             <h1 class="title-divs">Vagas Inscritas</h1>
+            <div class="barra-title"></div>
             <div class="vagas-container">
                 <?php
                     // vagas cadastradas no usuario
