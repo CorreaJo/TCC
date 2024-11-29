@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: black;
+    
+}
+
+label {
+    color:white;
+    text-transform: uppercase;
+    font-family: "Poppins", system-ui;
+    word-break: keep-all;
+    font-size: 14px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+input {
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+    border-style: none;
+}
+
+select {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 260px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10% 0px;
+    background-color: #bfbfbf0f;
+    padding: 25px 50px;
+}
+
+h1 {
+    color: #428228;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+textarea:focus, input:focus {
+    box-shadow:none;
+    outline: none;
+}
+
+.botao {
+    margin-top: 20px;
+    background-color: #642898;
+    padding: 5px 50px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+.botao:hover {
+    background-color: #b356ff;
+}
+
+a {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin-top: 5px;
+    color: #428228;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+a:hover {
+    color: #1c6300;
+}

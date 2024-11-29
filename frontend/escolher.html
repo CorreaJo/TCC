@@ -3,15 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa ou Pessoal - CORDWORK</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CORDWORK - Escolher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Poppins", system-ui;
+        }
+
+        a {
+            color: white;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .botao {
+            background-color: #532B77;
+            padding: 15px 50px;
+            text-decoration: none;
+            border-radius: 10px 0px 10px 0px;
+        }
+
+        .botao:hover {
+            background-color: #33164b;
+        }
+
+        .escolher-usuario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            margin-top: 50%;
+        }
+        
+        .botao-voltar {
+            font-size: 15px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #428228;
+        }
+
+        
+    </style>
 </head>
 <body>
     <div class="escolher-usuario">
-        <h1>Quer se cadastrar como: </h1>
-        <a href="#">EMPRESA</a>
-        <a href="#">USUARIO</a>
+        <h1>SE CADASTRAR COMO: </h1>
+        <a class="botao usuario" href="../backend/usuario/cadastrar-usuario.php">USUARIO</a>
+        <h1 style="font-style: italic; font-weight: 200;">ou</h1>
+        <a class="botao empresa" href="../backend/empresa/cadastrar-empresa.php">EMPRESA</a>
+        <a class="botao-voltar" href="index.php">Voltar para o login</a>
     </div>
-    
 </body>
 </html>
