@@ -21,7 +21,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
 
         if(base64_decode($linha["senha"]) != $senha ){
             $_SESSION["erro"] = "Email ou senha errados!";
-            header("location: ../frontend/index.php");
+            header("location: ../index.php");
         } else {
             $_SESSION["email"] = $email;
             $_SESSION["nome"] = $linha["nome"];
@@ -40,7 +40,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['senha']))
         $linha = mysqli_fetch_assoc($resul);
         if(base64_decode($linha["senha"]) != $senha ){
             $_SESSION["erro"] = "Email ou senha errados!";
-            header("location: ../frontend/index.php");
+            header("location: ../index.php");
         } else {
             $_SESSION["email"] = $email;
             $_SESSION["categoria"] = $linha["categoria"];
