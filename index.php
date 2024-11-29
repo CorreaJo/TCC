@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORDWORK - Login</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="frontend/styles/index.css">
 </head>
 
 <body>
     <div class="container">
-            <div><img src="img/img-login.png" alt="imagem de mulher login"></div>
+            <div><img src="frontend/img/img-login.png" alt="imagem de mulher login"></div>
             <div>
-                <form action="../backend/login.php" method="post">
+                <form action="backend/login.php" method="post">
                     <?php
                         if(isset($_SESSION["erro"])){
                             
@@ -35,7 +35,7 @@
                     <button class="botao" name="login" type="submit" value="login">ENTRAR</button>
                 </form>
             </div>
-        <p>Não possui conta? <a href="escolher.html" id="text-cadastro">Cadastre-se aqui!</a></p>
+        <p>Não possui conta? <a href="frontend/escolher.html" id="text-cadastro">Cadastre-se aqui!</a></p>
     </div>
 </body>
 </html>
